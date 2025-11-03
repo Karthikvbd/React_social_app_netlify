@@ -1,0 +1,28 @@
+{
+  "posts": [
+    {
+      "id": 2,
+      "title": "Learning React",
+      "datetime": "July 02, 2024 09:30:00 AM",
+      "body": "React is a powerful library for building user interfaces."
+    },
+    {
+      "id": 3,
+      "title": "Advanced JavaScript.js ",
+      "datetime": "November 01, 2025 11:16:57 PM",
+      "body": "Understanding closures and async programming is crucial for modern JavaScript development feature deployment"
+    },
+    {
+      "id": 4,
+      "title": "lets code",
+      "datetime": "November 03, 2025 12:52:05 PM",
+      "body": "hello coder karthik"
+    },
+    {
+      "id": 5,
+      "title": "Congrats! You completed  React Full Course",
+      "datetime": "November 03, 2025 9:21:19 PM",
+      "body": "Hope you Got lot of values.."
+    }
+  ]
+}
