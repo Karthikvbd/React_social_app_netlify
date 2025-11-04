@@ -54,7 +54,7 @@ footer {
   position: relative;
   margin-top: auto;
   padding: 1rem;
-  background-color: #66d8f5;
+  background-color: #367a8b;
   bottom: 0%;
   text-align: center;
   flex-shrink: 0; /* Prevent footer from shrinking */
@@ -62,7 +62,7 @@ footer {
 
 .Header, .Footer {
   width: 100%;
-  background-color: #66d8f5;
+  background-color: #367a8b;
   padding: 1rem;
   display: flex;
   justify-content: space-between;

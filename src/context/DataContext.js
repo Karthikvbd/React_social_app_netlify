@@ -17,6 +17,7 @@ export const DataProvider = ({ children }) => {
   const navigate = useNavigate();
   const {width} = useWindowSize();
   const { data, fetchError, isLoading } = useAxiosFetch('http://localhost:3501/posts');
+  
 
   useEffect(() => {
     setPosts(data);
