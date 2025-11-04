@@ -1,17 +1,19 @@
+const express = require('express');
 const jsonServer = require('json-server');
-const server = jsonServer.create();
+const cors = require('cors');
+
+const app = express();
+app.use(cors());
+app.use(express.json());
+
 const router = jsonServer.router('db.json');
 const middlewares = jsonServer.defaults();
 
-server.use(middlewares);
-server.use(jsonServer.bodyParser);
+app.use(middlewares);
+app.use('/api', router);
 
 const PORT = process.env.PORT || 3501;
-
-server.use('/api', router);
-
-server.listen(PORT, () => {
+app.listen(PORT, () => {
   console.log(`JSON Server is running on port ${PORT}`);
 });
 
-module.exports = server;
