@@ -1,4 +1,4 @@
-import { Link,Routes, Route } from "react-router-dom";
+import { Routes, Route } from "react-router-dom";
 import About from "./About";
 import Footer from "./Footer";
 import Header from "./Header";
@@ -14,17 +14,17 @@ function App() {
   return (
     <div className="App">
       <DataProvider>
-        <Header  title="Textify" />
+        <Header title="Textify" />
         <Nav />
         <Routes>
           <Route path="/" element={<Home />} />
           <Route path="post">
-            <Route index element={<NewPost/>} />
+            <Route index element={<NewPost />} />
             <Route path=":id" element={<Postpage />} />
-            </Route>
-            <Route path="edit/:id" element={<EditPost/>} />
-          <Route path="about" element = {<About />} />
-          <Route path="*" element = {<Missing />} />
+          </Route>
+          <Route path="edit/:id" element={<EditPost />} />
+          <Route path="about" element={<About />} />
+          <Route path="*" element={<Missing />} />
         </Routes>
         <Footer />
       </DataProvider>
