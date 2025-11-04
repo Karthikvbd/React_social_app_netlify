@@ -5,25 +5,16 @@ import DataContext from './context/DataContext';
 const Postpage = () => {
   const {posts, handledelete } = useContext(DataContext);
   const { id } = useParams();
-  const post = posts.find(post => (post.id).toString
-  () === id);
+  const post = posts.find(post => (post.id).toString () === id);
   return (
     <article className="Postpage">
       {post &&
         <>
           <h2>{post.title}</h2>
-          <p className="postDate">{post.
-          datetime}</p>
-          <p className="postBody">{post.
-          body}</p>
-          <Link to={`/edit/${post.id}`}><button
-          className="editButton">Edit
-          Post</button></Link>
-          <button
-          className="deleteButton"
-          onClick={() => handledelete
-          (post.id)}>
-            Delete Post</button>
+          <p className="postDate">{post.datetime}</p>
+          <p className="postBody">{post.body}</p>
+          <Link to={`/edit/${post.id}`}><button className="editButton">EditPost</button></Link>
+          <button className="deleteButton"onClick={() => handledelete(post.id)}> Delete Post</button>
         </>
       }
       {!post &&

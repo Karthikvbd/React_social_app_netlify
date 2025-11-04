@@ -1,10 +1,7 @@
 import { createContext, useState, useEffect } from "react";
-import Post from "../Post";
-import PostLayout from "../PostLayout";
 import { format } from "date-fns";
 import { useNavigate } from "react-router-dom";
 import api from "../api/Posts";
-import EditPost from "../EditPost";
 import useWindowSize from "../hooks/useWindowSize";
 import useAxiosFetch from "../hooks/useAxiosFetch"; 
 const DataContext = createContext({});
@@ -37,11 +34,9 @@ export const DataProvider = ({ children }) => {
 
   const handleSubmit = async (e) => {
     e.preventDefault();
-    const id = posts.length ? posts[posts.length - 1]
-    .id + 1 : 1;
+    const id = posts.length ? posts[posts.length - 1].id + 1 : 1;
     const datetime = format(new Date(), 'MMMM dd, yyyy pp');
-    const newPost = { id, title: postTitle, datetime,
-    body: postBody };
+    const newPost = { id, title: postTitle, datetime,body: postBody };
     try {
       const response = await api.post('/posts', newPost);
       const allPosts = [...posts, response.data];
@@ -56,13 +51,10 @@ export const DataProvider = ({ children }) => {
 
   const handleEdit = async (id) => {
     const datetime = format(new Date(), 'MMMM dd, yyyy pp');
-    const updatedPost = { id, title: editTitle,
-    datetime, body: editBody };
+    const updatedPost = { id, title: editTitle,datetime, body: editBody };
     try {
-      const response = await api.put(`/posts/${id}`,
-      updatedPost);
-      setPosts(posts.map(post => post.id === id ? 
-      {...response.data} : post));
+      const response = await api.put(`/posts/${id}`,updatedPost);
+      setPosts(posts.map(post => post.id === id ? {...response.data} : post));
       setEditTitle('');
       setEditBody('');
       navigate('/');
