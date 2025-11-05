@@ -86,7 +86,7 @@ export const DataProvider = ({ children }) => {
   };
 
   //  Delete post
-  const handleDelete = async (id) => {
+  const handledelete = async (id) => {
     try {
       await api.delete(`/posts/${id}`);
       const postsList = posts.filter(post => post.id !== id);
@@ -112,7 +112,7 @@ export const DataProvider = ({ children }) => {
         handleEdit,
         editTitle, setEditTitle,
         editBody, setEditBody,
-        handleDelete
+        handledelete
       }}
     >
       {children}
