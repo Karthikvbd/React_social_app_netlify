@@ -4,6 +4,8 @@ import DataContext from './context/DataContext';
 
 const Home = () => {
   const {searchResults, fetchError, isLoading} = useContext(DataContext);
+
+  console.log("Search Results in Home:", searchResults);
   return (
       <main className='Home'>
         {isLoading && <p className='statusMsg'>Loading posts...</p>}
